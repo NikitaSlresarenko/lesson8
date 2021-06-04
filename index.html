@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+
+// first task
+
+function camelize(str) {
+ let strArr = str.split('-');
+ let newStr = '';
+
+ strArr.forEach(function (item, i) {
+   let index = 0;
+   for (let letter of item) {
+     if (index == 0 && i != 0) {
+       letter = letter.toUpperCase();
+     }
+     newStr += letter;
+     index++;
+   }
+ })
+ return newStr;
+}
+
+let stringsInCebab = ['border-top-style', 'font-size', 'background-color', 'font-weight'];
+let stringsInCamel = [];
+
+for (let stringInCebab of stringsInCebab) {
+ stringsInCamel.push(camelize(stringInCebab));
+}
+    </script>
+</body>
+</html>
